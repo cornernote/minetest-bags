@@ -20,6 +20,27 @@ Allows players to craft and attach bags to their inventory to increase player it
 
 
 ----------------------------------
+Crafts
+----------------------------------
+
+8-slot bag:
+-S-  <- bag:small
+WWW     S = default:stick
+WWW     W = default:wood
+
+16-slot bag:
+-S-  <- bag:medium
+BBB     S = default:stick
+BBB     B = bags:small
+
+24-slot bag:
+-S-  <- bag:large
+BBB     S = default:stick
+BBB     B = bags:medium
+
+
+
+----------------------------------
 Modders Guide
 ----------------------------------
 
