@@ -24,9 +24,7 @@ Modders Guide
 ----------------------------------
 
 
-Turn your item into a Bag:
-
-Add bagslots=X to the groups in the node definition.
+To turn your craftitem into a bag simply add bagslots=X to the groups in the node definition.
 
 EG:
 minetest.register_node("your_mod:your_item", {
