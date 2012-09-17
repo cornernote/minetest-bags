@@ -8,7 +8,6 @@ Copyright (c) 2012 cornernote, Brett O'Donnell <cornernote@gmail.com>
 Source Code: https://github.com/cornernote/minetest-bags
 License: GPLv3
 
-Textures by: Jordan Snelling (Jordach)
 Texture License: GPLv3
 
 
