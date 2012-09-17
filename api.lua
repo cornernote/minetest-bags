@@ -201,7 +201,7 @@ end
 -- set_armor_groups
 bags.set_armor_groups = function(player)
 	local level
-	local armor_groups = {level=4,fleshy=4,cracky=4,choppy=4}
+	local armor_groups = {level=4,fleshy=4,snappy=4,choppy=4}
 	player_inv = player:get_inventory()
 
 	-- helmet
@@ -217,7 +217,7 @@ bags.set_armor_groups = function(player)
 	-- boots
 	level = bags.get_armor_level(player_inv:get_stack("armor_boots", 1),"armor_boots")
 	if level~=nil then
-		armor_groups.cracky = level
+		armor_groups.snappy = level
 	end
 	-- shield
 	level = bags.get_armor_level(player_inv:get_stack("armor_shield", 1),"armor_shield")
@@ -232,26 +232,30 @@ end
 -- register armor
 bags.register_armor = function(name,label,material,level)
 
-	-- craftitems
-	minetest.register_craftitem("bags:armor_helmet_"..name, {
+	-- tools
+	minetest.register_tool("bags:armor_helmet_"..name, {
 		description = label.." Helmet",
 		inventory_image = "armor_helmet_"..name..".png",
 		groups = {armor_helmet=level},
+		wear = 0,
 	})
-	minetest.register_craftitem("bags:armor_chest_"..name, {
+	minetest.register_tool("bags:armor_chest_"..name, {
 		description = label.." Chestplate",
 		inventory_image = "armor_chest_"..name..".png",
 		groups = {armor_chest=level},
+		wear = 0,
 	})
-	minetest.register_craftitem("bags:armor_boots_"..name, {
+	minetest.register_tool("bags:armor_boots_"..name, {
 		description = label.." Boots",
 		inventory_image = "armor_boots_"..name..".png",
 		groups = {armor_boots=level},
+		wear = 0,
 	})
-	minetest.register_craftitem("bags:armor_shield_"..name, {
+	minetest.register_tool("bags:armor_shield_"..name, {
 		description = label.." Shield",
 		inventory_image = "armor_shield_"..name..".png",
 		groups = {armor_shield=level},
+		wear = 0,
 	})
 
 	-- crafts
