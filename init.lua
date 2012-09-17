@@ -65,60 +65,12 @@ minetest.register_craft({
     },
 })
 
--- register armor
-for material,name in pairs({wood="Wooden",steel_ingot="Steel",mese="Mese"}) do
-	-- craftitems
-	minetest.register_craftitem("bags:armor_helmet_"..material, {
-		description = name.." Helmet",
-		inventory_image = "armor_helmet_"..material..".png",
-		groups = {armor_helmet=1},
-	})
-	minetest.register_craftitem("bags:armor_chest_"..material, {
-		description = name.." Chestplate",
-		inventory_image = "armor_chest_"..material..".png",
-		groups = {armor_chest=1},
-	})
-	minetest.register_craftitem("bags:armor_boots_"..material, {
-		description = name.." Boots",
-		inventory_image = "armor_boots_"..material..".png",
-		groups = {armor_boots=1},
-	})
-	minetest.register_craftitem("bags:armor_shield_"..material, {
-		description = name.." Shield",
-		inventory_image = "armor_shield_"..material..".png",
-		groups = {armor_shield=1},
-	})
-	-- crafts
-	minetest.register_craft({
-		output = "bags:armor_helmet_"..material,
-		recipe = {
-			{"default:"..material, "default:"..material, "default:"..material},
-			{"default:"..material, "", "default:"..material},
-			{"default:"..material, "", "default:"..material},
-		},
-	})
-	minetest.register_craft({
-		output = "bags:armor_chest_"..material,
-		recipe = {
-			{"default:"..material, "default:"..material, "default:"..material},
-			{"default:"..material, "default:"..material, "default:"..material},
-			{"", "default:"..material, ""},
-		},
-	})
-	minetest.register_craft({
-		output = "bags:armor_boots_"..material,
-		recipe = {
-			{"default:"..material, "", "default:"..material},
-			{"default:"..material, "", "default:"..material},
-			{"default:"..material, "", "default:"..material},
-		},
-	})
-	minetest.register_craft({
-		output = "bags:armor_shield_"..material,
-		recipe = {
-			{"default:"..material, "default:"..material, "default:"..material},
-			{"default:"..material, "", "default:"..material},
-			{"default:"..material, "default:"..material, "default:"..material},
-		},
-	})
+-- register armors
+local armors = {
+	{name="wood",label="Wooden",material="default:wood",level=3},
+	{name="steel",label="Steel",material="default:steel_ingot",level=2},
+	{name="mese",label="Mese",material="default:mese",level=1},
+}
+for _,params in pairs(armors) do
+	bags.register_armor(params.name,params.label,params.material,params.level)
 end

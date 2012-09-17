@@ -130,7 +130,7 @@ bags.on_joinplayer = function(player)
 		end,
 		allow_take = function(inv, listname, index, stack, player)
 			if player:get_inventory():is_empty(listname.."contents")==true then
-				return 1
+				return stack:get_size(listname)
 			else
 				return 0
 			end
@@ -150,19 +150,21 @@ bags.on_joinplayer = function(player)
 	local armor_inv = minetest.create_detached_inventory(player:get_player_name().."_armor",{
 		on_put = function(inv, listname, index, stack, player)
 			player:get_inventory():set_stack(listname, index, stack)
+			bags.set_armor_groups(player)
 		end,
 		on_take = function(inv, listname, index, stack, player)
 			player:get_inventory():set_stack(listname, index, nil)
+			bags.set_armor_groups(player)
 		end,
 		allow_put = function(inv, listname, index, stack, player)
-			if inv:is_empty(listname) and bags.is_armor(stack,listname) then
+			if inv:is_empty(listname) and bags.get_armor_level(stack,listname) then
 				return 1
 			else
 				return 0
 			end
 		end,
 		allow_take = function(inv, listname, index, stack, player)
-			return 1
+			return stack:get_count()
 		end,
 		allow_move = function(inv, from_list, from_index, to_list, to_index, count, player)
 			return 0
@@ -175,8 +177,9 @@ bags.on_joinplayer = function(player)
 		armor_inv:set_stack(armor,1,player_inv:get_stack(armor,1))
 	end
 
-	-- set formspec
+	-- player initial setup
 	player:set_inventory_formspec(bags.get_formspec(player))
+	bags.set_armor_groups(player)
 end
 
 
@@ -187,9 +190,102 @@ bags.get_bagslots = function(stack)
 	end
 end
 
--- is_armor
-bags.is_armor = function(stack,armor_type)
+
+-- get_armor_level
+bags.get_armor_level = function(stack,armor_type)
 	if stack then
 		return stack:get_definition().groups[armor_type]
 	end
+end
+
+-- set_armor_groups
+bags.set_armor_groups = function(player)
+	local level
+	local armor_groups = {level=4,fleshy=4,cracky=4,choppy=4}
+	player_inv = player:get_inventory()
+
+	-- helmet
+	level = bags.get_armor_level(player_inv:get_stack("armor_helmet", 1),"armor_helmet")
+	if level~=nil then
+		armor_groups.level = level
+	end
+	-- chest
+	level = bags.get_armor_level(player_inv:get_stack("armor_chest", 1),"armor_chest")
+	if level~=nil then
+		armor_groups.fleshy = level
+	end
+	-- boots
+	level = bags.get_armor_level(player_inv:get_stack("armor_boots", 1),"armor_boots")
+	if level~=nil then
+		armor_groups.cracky = level
+	end
+	-- shield
+	level = bags.get_armor_level(player_inv:get_stack("armor_shield", 1),"armor_shield")
+	if level~=nil then
+		armor_groups.choppy = level
+	end
+
+	player:set_armor_groups(armor_groups)
+	print(dump(armor_groups))
+end
+
+-- register armor
+bags.register_armor = function(name,label,material,level)
+
+	-- craftitems
+	minetest.register_craftitem("bags:armor_helmet_"..name, {
+		description = label.." Helmet",
+		inventory_image = "armor_helmet_"..name..".png",
+		groups = {armor_helmet=level},
+	})
+	minetest.register_craftitem("bags:armor_chest_"..name, {
+		description = label.." Chestplate",
+		inventory_image = "armor_chest_"..name..".png",
+		groups = {armor_chest=level},
+	})
+	minetest.register_craftitem("bags:armor_boots_"..name, {
+		description = label.." Boots",
+		inventory_image = "armor_boots_"..name..".png",
+		groups = {armor_boots=level},
+	})
+	minetest.register_craftitem("bags:armor_shield_"..name, {
+		description = label.." Shield",
+		inventory_image = "armor_shield_"..name..".png",
+		groups = {armor_shield=level},
+	})
+
+	-- crafts
+	minetest.register_craft({
+		output = "bags:armor_helmet_"..name,
+		recipe = {
+			{material, material, material},
+			{material, "", material},
+			{material, "", material},
+		},
+	})
+	minetest.register_craft({
+		output = "bags:armor_chest_"..name,
+		recipe = {
+			{material, material, material},
+			{material, material, material},
+			{"", material, ""},
+		},
+	})
+	minetest.register_craft({
+		output = "bags:armor_boots_"..name,
+		recipe = {
+			{material, "", material},
+			{material, "", material},
+			{material, "", material},
+		},
+	})
+	minetest.register_craft({
+		output = "bags:armor_shield_"..name,
+		recipe = {
+			{material, material, material},
+			{material, "", material},
+			{material, material, material},
+		},
+	})
+	
 end
