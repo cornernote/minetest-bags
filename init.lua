@@ -66,7 +66,7 @@ minetest.register_craft({
 })
 
 -- register armor
-for material,name in pairs({wood="Wooden",iron="Iron",mese="Mese"}) do
+for material,name in pairs({wood="Wooden",steel_ingot="Steel",mese="Mese"}) do
 	-- craftitems
 	minetest.register_craftitem("bags:armor_helmet_"..material, {
 		description = name.." Helmet",
