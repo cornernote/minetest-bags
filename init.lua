@@ -9,9 +9,6 @@ License: GPLv3
 ]]--
 
 
--- add inventory_plus page
-inventory_plus.pages["bags"] = "Bags"
-
 -- get_formspec
 local get_formspec = function(player,page)
 	if page=="bags" then
@@ -60,6 +57,7 @@ end)
 
 -- register_on_joinplayer
 minetest.register_on_joinplayer(function(player)
+	inventory_plus.register_button(player,"bags","Bags")
 	local player_inv = player:get_inventory()
 	local bags_inv = minetest.create_detached_inventory(player:get_player_name().."_bags",{
 		on_put = function(inv, listname, index, stack, player)
