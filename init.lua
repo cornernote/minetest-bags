@@ -76,7 +76,7 @@ minetest.register_on_joinplayer(function(player)
 		end,
 		allow_take = function(inv, listname, index, stack, player)
 			if player:get_inventory():is_empty(listname.."contents")==true then
-				return stack:get_size(listname)
+				return stack:get_count()
 			else
 				return 0
 			end
