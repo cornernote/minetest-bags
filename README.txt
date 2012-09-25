@@ -3,10 +3,11 @@ Bags for Minetest
 ----------------------------------
 
 
-Source Code: Copyright (c) 2012 cornernote, Brett O'Donnell <cornernote@gmail.com>
+Copyright (c) 2012 cornernote, Brett O'Donnell <cornernote@gmail.com>
 Textures: Copyright (c) 2012 tonyka
 
 Source Code: https://github.com/cornernote/minetest-bags
+Home Page: https://sites.google.com/site/cornernote/minetest/bags
 
 This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.
 
