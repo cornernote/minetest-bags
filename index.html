@@ -1,79 +1,264 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Attach bags to your inventory to increase item storage capacity.">
 
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Minetest-bags : Allows players to craft and attach bags to their inventory to increase player item storage capacity." />
+    <title>Bags for Minetest</title>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//cornernote.github.io/minetest-bootstrap-theme/css/minetest.css" rel="stylesheet" type="text/css">
+</head>
+<body>
 
-    <title>Minetest-bags</title>
-  </head>
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="ribbon">
+        <a href="https://github.com/cornernote/minetest-bags">Fork me on GitHub</a>
+    </div>
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Bags</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="#dirt">Features</a>
+                </li>
+                <li>
+                    <a href="#stone">Docs</a>
+                </li>
+                <li>
+                    <a href="#lava">Links</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div id="header">
+    <div id="header-bg">
+        <div class="container">
+            <div class="jumbotron">
+                <h1>Bags<br/>
+                    <small>for Minetest</small>
+                </h1>
 
-  <body>
+                <p class="lead">Attach bags to your inventory to increase item storage capacity.</p>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/cornernote/minetest-bags">View on GitHub</a>
+                <p class="buttons">
+                    <a class="btn btn-primary btn-lg" role="button" href="https://github.com/cornernote/minetest-bags/releases/latest">Download</a>
+                    <a class="btn btn-default btn-lg" role="button" href="https://github.com/cornernote/minetest-bags">GitHub</a>
+                    <a class="btn btn-default btn-lg" role="button" href="http://minetest.net/forum/viewtopic.php?id=3081">Minetest</a>
+                    <a class="btn btn-default btn-lg" role="button" href="http://cornernote.github.io/minetest">CoRNeRNoTe</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
 
-          <h1 id="project_title">Minetest-bags</h1>
-          <h2 id="project_tagline">Allows players to craft and attach bags to their inventory to increase player item storage capacity.</h2>
+<div id="content">
+    <a id="dirt"></a>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/cornernote/minetest-bags/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/cornernote/minetest-bags/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
+    <div class="section section-dirt">
+        <div class="container">
+            <div class="jumbotron">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="thumbnail">
+                            <a href="img/screenshot.png" class="fancybox" rel="screenshots"><img src="img/screenshot.png" alt="screenshot"></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <h2>Features</h2>
+                        <ul>
+                            <li>
+                                Bags are available in inventory.
+                            </li>
+                            <li>
+                                Multiple sized bags.
+                            </li>
+                            <li>
+                                Bags store items permanently with the player.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6 col-md-6">
+                    <div class="thumbnail">
+                        <a href="img/screenshot1.png" class="fancybox" rel="screenshots"><img src="img/screenshot1.png" alt="screenshot+1"></a>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-md-6">
+                    <div class="thumbnail">
+                        <a href="img/screenshot2.png" class="fancybox" rel="screenshots"><img src="img/screenshot2.png" alt="screenshot+2"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+    <a id="stone"></a>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+    <div class="section section-docs">
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+        <div class="container">
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+            <h2>Docs</h2>
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+            <h3>Requirements</h3>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+            <ul>
+                <li>
+                    <a href="http://minetest.net">Minetest</a> >=0.4.3
+                    <a href="http://cornernote.github.io/minetest-inventory_plus/">Inventory Plus</a> >=1.0.0
+                </li>
+            </ul>
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+            <h3>Installation</h3>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+            <p>Download and uncompress the
+                <a href="https://github.com/cornernote/minetest-bags/archive/master.zip">latest version</a>, and move the the
+                <code>minetest-bags-master</code> folder into your
+                <code>minetest/mods</code> folder.</p>
 
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+            <h3>Crafting Guide</h3>
 
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+            <h3>Crafting Guide</h3>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
+            <p>The material used below are:</p>
+            <ul>
+                <li><code>S</code> = <code>default:stick</code></li>
+                <li><code>W</code> = <code>default:wood</code></li>
+                <li><code>1</code> = <code>bag:small</code></li>
+                <li><code>2</code> = <code>bag:medium</code></li>
+                <li><code>-</code> = <code>empty</code></li>
+            </ul>
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <h4>8-slot bag</h4>
+                <pre class="craft">-S-
+WWW
+WWW</pre>
+                </div>
+                <div class="col-lg-4">
+                    <h4>16-slot bag</h4>
+                <pre class="craft">-S--
+111
+111</pre>
+                </div>
+                <div class="col-lg-4">
+                    <h4>24-slot bag</h4>
+                <pre class="craft">-S--
+222
+222</pre>
+                </div>
+            </div>
+
+            <h3>Modding Guide</h3>
+
+            <p>To turn your craftitem into a bag simply add
+                <code>bagslots=X</code> to the groups in the node definition.</p>
+            <pre class="prettyprint linenums">minetest.register_node("your_mod:your_item", {
+    description = "Your Item",
+    groups = {bagslots=16},
+})</pre>
+
+        </div>
+
     </div>
+</div>
+<div id="footer">
+    <a id="lava"></a>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Minetest-bags maintained by <a href="https://github.com/cornernote">cornernote</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="well">
+                    <h4>Support</h4>
+                    <ul class="list-unstyled">
+                        <li>Does this site need improvement? Go ahead and
+                            <a href="https://github.com/cornernote/minetest-bags/edit/gh-pages/index.html">suggest a change</a>.
+                        </li>
+                        <li>Found a bug, or need help using this project? Check the
+                            <a href="https://github.com/cornernote/minetest-bags/issues">open issues</a> or
+                            <a href="https://github.com/cornernote/minetest-bags/issues/new">create an issue</a>.
+                        </li>
+                    </ul>
+                </div>
+                <div class="well">
+                    <h4>About</h4>
+
+                    <p>This project is open source, so it's distributed freely. If you find it useful then I ask not
+                        for your wealth, but simply to spare your time to consider the world we share by watching
+                        <a href="http://earthlings.com/">Earthlings</a>, a multi-award winning film available to watch online for free.
+                        A must-see for anyone who wishes to make the world a better place.</p>
+
+                </div>
+                <div class="well">
+                    <h4>License</h4>
+
+                    <p>
+                        <a href="license.html" class="fancybox" data-fancybox-type="ajax">BSD-3-Clause</a>, Copyright &copy; 2014
+                        <a href="http://cornernote.github.io/">Brett O'Donnell</a></p>
+
+                    <h5>Credits</h5>
+                    <ul>
+                        <li>Tonyka - created the amazing bag textures</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="well">
+                    <h4>Bags<br/>
+                        <small>for Minetest</small>
+                    </h4>
+                    <ul class="list-unstyled">
+                        <li><a href="https://github.com/cornernote/minetest-bags">GitHub Project</a></li>
+                        <li><a href="http://minetest.net/forum/viewtopic.php?id=3081">Minetest Forum Page</a></li>
+                    </ul>
+                </div>
+                <div class="well">
+                    <h4>Resources</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="http://minetest.net/">Minetest Website</a></li>
+                        <li><a href="http://cornernote.github.io/minetest">CoRNeRNoTe's Minetest</a></li>
+                        <li><a href="http://cornernote.github.io/minetest-inventory-plus">Inventory Plus</a></li>
+                    </ul>
+                </div>
+                <div class="well">
+                    <h4>Minetest Theme</h4>
+
+                    <p>This
+                        <a href="http://cornernote.github.io/minetest-bootstrap-theme">Minetest Theme for
+                            Twitter Bootstrap</a> is available for download.
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
 
-    
+<!-- load js last -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+<script src="//google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".fancybox").fancybox();
+    });
+</script>
 
-  </body>
+</body>
 </html>
