@@ -14,7 +14,7 @@ Allows players to craft and attach bags to their inventory to increase player it
 
 - **[Documentation](http://cornernote.github.io/minetest-bags)**
 - **[GitHub Project](https://github.com/cornernote/minetest-bags)**
-- **[Minetest Forum](http://minetest.net/forum/viewtopic.php?id=3081)**
+- **[Minetest Forum](https://forum.minetest.net/viewtopic.php?id=3081)**
 
 
 ## Support
