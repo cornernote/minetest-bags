@@ -122,17 +122,15 @@ minetest.register_craft({
 minetest.register_craft({
 	output = "bags:medium",
 	recipe = {
-        {"", "default:stick", ""},
-        {"bags:small", "bags:small", "bags:small"},
-        {"bags:small", "bags:small", "bags:small"},
+        {"bags:small", "bags:small"},
+        {"bags:small", "bags:small"},
     },
 })
 minetest.register_craft({
 	output = "bags:large",
 	recipe = {
-        {"", "default:stick", ""},
-        {"bags:medium", "bags:medium", "bags:medium"},
-        {"bags:medium", "bags:medium", "bags:medium"},
+        {"bags:medium", "bags:medium"},
+        {"bags:medium", "bags:medium"},
     },
 })
 
