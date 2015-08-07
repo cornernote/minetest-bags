@@ -1,0 +1,20 @@
+{
+  "name": "bags",
+  "version": "1.0.1",
+  "homepage": "https://cornernote.github.io/minetest-bags/",
+  "description": "Attach bags to your inventory to increase item storage capacity.",
+  "main": "init.lua",
+  "keywords": [
+    "bags"
+  ],
+  "authors": [
+    "cornernote"
+  ],
+  "license": "GPL",
+  "dependencies": {
+    "inventory_plus": "~1.0.0"
+  },
+  "ignore": [
+    "**/.*"
+  ]
+}
