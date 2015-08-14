@@ -1,7 +1,14 @@
 # Bags for Minetest
 
-Allows players to craft and attach bags to their inventory to increase player item storage capacity.
+[![home](https://img.shields.io/badge/bags-home-blue.svg?style=flat-square)](https://cornernote.github.io/minetest-bags/)
+[![download](https://img.shields.io/github/tag/cornernote/minetest-bags.svg?style=flat-square&label=release)](https://github.com/cornernote/minetest-bags/archive/master.zip)
+[![git](https://img.shields.io/badge/git-project-green.svg?style=flat-square)](https://github.com/cornernote/minetest-bags)
+[![forum](https://img.shields.io/badge/minetest-mod-green.svg?style=flat-square)](http://forum.minetest.net/viewtopic.php?f=11&t=3081)
+[![bower](https://img.shields.io/badge/bower-mod-green.svg?style=flat-square)](https://minetest-bower.herokuapp.com/mods/bags)
 
+## Description
+
+Allows players to craft and attach bags to their inventory to increase player item storage capacity.
 
 ## Features
 
@@ -10,11 +17,13 @@ Allows players to craft and attach bags to their inventory to increase player it
 - Bags store items permanently with the player.
 
 
-## Resources
+## Project Resources
 
-- **[Documentation](http://cornernote.github.io/minetest-bags)**
-- **[GitHub Project](https://github.com/cornernote/minetest-bags)**
-- **[Minetest Forum](https://forum.minetest.net/viewtopic.php?id=3081)**
+* [Home](https://cornernote.github.io/minetest-bags/)
+* [Download](https://github.com/cornernote/minetest-bags/archive/master.zip)
+* [Project](https://github.com/cornernote/minetest-bags)
+* [Forum](http://forum.minetest.net/viewtopic.php?f=11&t=3081)
+* [Bower](https://minetest-bower.herokuapp.com/mods/bags)
 
 
 ## Support
