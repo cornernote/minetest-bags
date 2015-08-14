@@ -6,7 +6,10 @@
     "https://cornernote.github.io/minetest-bags/img/screenshot.png"
   ],
   "keywords": [
-    "bags"
+    "bags",
+    "inventory",
+    "player",
+    "formspec"
   ],
   "authors": [
     "cornernote"
