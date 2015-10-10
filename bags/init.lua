@@ -33,6 +33,8 @@ local get_formspec = function(player,page)
 				.."button[2,0;2,0.5;bags;Bags]"
 				.."image[7,0;1,1;"..image.."]"
 				.."list[current_player;bag"..i.."contents;0,1;8,3;]"
+				.."listring[current_name;bag"..i.."contents]"
+				.."listring[current_player;main]"
 		end
 	end
 end
