@@ -9,6 +9,14 @@ License: BSD-3-Clause https://raw.github.com/cornernote/minetest-bags/master/LIC
 ]]--
 
 
+local use_sfinv = false
+if not core.global_exists("inventory_plus") and core.global_exists("sfinv_buttons") then
+	use_sfinv = true
+else
+	local use_sfinv = (core.global_exists("sfinv_buttons") and core.settings:get("inventory") == "sfinv") or false
+end
+
+
 -- get_formspec
 local get_formspec = function(player,page)
 	if page=="bags" then
@@ -41,17 +49,30 @@ end
 
 -- register_on_player_receive_fields
 minetest.register_on_player_receive_fields(function(player, formname, fields)
-	if fields.bags then
+	if use_sfinv then
+		if fields.main then
+			return sfinv.set_page(player, "sfinv_buttons:buttons")
+		elseif fields.bags then
+			player:set_inventory_formspec(get_formspec(player, "bags"))
+			return
+		end
+	elseif fields.bags then
 		inventory_plus.set_inventory_formspec(player, get_formspec(player,"bags"))
 		return
 	end
+	
 	for i=1,4 do
 		local page = "bag"..i
 		if fields[page] then
 			if player:get_inventory():get_stack(page, 1):get_definition().groups.bagslots==nil then
 				page = "bags"
 			end
-			inventory_plus.set_inventory_formspec(player, get_formspec(player,page))
+			
+			if use_sfinv then
+				player:set_inventory_formspec(get_formspec(player, page))
+			else
+				inventory_plus.set_inventory_formspec(player, get_formspec(player,page))
+			end
 			return
 		end
 	end
@@ -59,7 +80,18 @@ end)
 
 -- register_on_joinplayer
 minetest.register_on_joinplayer(function(player)
-	inventory_plus.register_button(player,"bags","Bags")
+	if use_sfinv then
+		sfinv_buttons.register_button("bags", {
+			title = "Bags",
+			action = function(player)
+				player:set_inventory_formspec(get_formspec(player, "bags"))
+			end,
+			image = "bags_small.png",
+		})
+	else
+		inventory_plus.register_button(player,"bags","Bags")
+	end
+	
 	local player_inv = player:get_inventory()
 	local bags_inv = minetest.create_detached_inventory(player:get_player_name().."_bags",{
 		on_put = function(inv, listname, index, stack, player)
@@ -94,6 +126,7 @@ minetest.register_on_joinplayer(function(player)
 		bags_inv:set_stack(bag,1,player_inv:get_stack(bag,1))
 	end
 end)
+
 
 -- register bag tools
 minetest.register_tool("bags:small", {
