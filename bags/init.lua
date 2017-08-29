@@ -78,17 +78,19 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 	end
 end)
 
+if use_sfinv then
+	sfinv_buttons.register_button("bags", {
+		title = "Bags",
+		action = function(player)
+			player:set_inventory_formspec(get_formspec(player, "bags"))
+		end,
+		image = "bags_small.png",
+	})
+end
+
 -- register_on_joinplayer
 minetest.register_on_joinplayer(function(player)
-	if use_sfinv then
-		sfinv_buttons.register_button("bags", {
-			title = "Bags",
-			action = function(player)
-				player:set_inventory_formspec(get_formspec(player, "bags"))
-			end,
-			image = "bags_small.png",
-		})
-	else
+	if not use_sfinv then
 		inventory_plus.register_button(player,"bags","Bags")
 	end
 	
