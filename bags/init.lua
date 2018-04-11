@@ -120,7 +120,7 @@ minetest.register_on_joinplayer(function(player)
 		allow_move = function(inv, from_list, from_index, to_list, to_index, count, player)
 			return 0
 		end,
-	})
+	}, player:get_player_name())
 	for i=1,4 do
 		local bag = "bag"..i
 		player_inv:set_size(bag, 1)
